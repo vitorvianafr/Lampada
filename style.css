@@ -5,5 +5,7 @@ main {
     align-items: center;
 }
 button {
-    width: 80px;
+    width: 120px;
+    border-style: outset;
+    border-radius: 10%;
 }

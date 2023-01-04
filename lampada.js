@@ -1,13 +1,8 @@
-const turnOn = document.getElementById ('turnOn');
-const turnOff = document.getElementById('turnOff');
+const turnOnOff = document.getElementById ('turnOnOff');
 const lamp = document.getElementById ('lamp');
 
 function isLampBroken (){
     return lamp.src.indexOf ( 'quebrada' )> -1
-
-}
-function islampon(){
-    return lamp.src.indexOf ('ligada')
 }
 
 function lampOn () {
@@ -23,13 +18,22 @@ function lampOff () {
 
 }
 
+function lampOnOff(){
+    if (turnOnOff.textContent == 'Ligar'){
+        lampOn();
+        turnOnOff.textContent = 'Desligar'
+    }else{
+        turnOnOff.textContent = 'Ligar'
+        lampOff();
+    }
+}
+
 function lampBroken () {
     lamp.src = './img/quebrada.jpg';
 }
 
 
-turnOn.addEventListener ( 'click', lampOn );
-turnOff.addEventListener ( 'click', lampOff );
+turnOnOff.addEventListener ( 'click', lampOnOff );
 lamp.addEventListener ( 'mouseover', lampOn );
 lamp.addEventListener ( 'mouseleave', lampOff );
 lamp.addEventListener ( 'dblclick', lampBroken );
